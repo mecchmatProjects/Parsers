@@ -12,9 +12,9 @@ make
 kvp2tlv data.tlv Kvp.json kes.json
 ```
 
-First file (obligatory) - output tlv file
-Second file (optional) - input file of Key Value pairs
-Third file (optional) - input file of Key Value for encoded key values
+-  First file (obligatory) - output tlv file
+-  Second file (optional) - input file of Key Value pairs 
+-  Third file (optional) - input file of Key Value for encoded key values
 
 
 
