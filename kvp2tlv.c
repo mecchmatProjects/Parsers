@@ -129,7 +129,7 @@ int main(int argc, char* argv[])
         }
 
         size_t len = 0;
-        printf("\nkey=%s ", kvp_get_string(&json, &len));
+        //printf("\nkey=%s ", kvp_get_string(&json, &len));
 
         void* value = ht_get(dict_keys, kvp_get_string(&json, &len));
         if(value == NULL) {
@@ -163,11 +163,11 @@ int main(int argc, char* argv[])
 
         char* buf = malloc(json.data.string_size);
         kvp_get_value(&json, buf, &len);
-
-        printf("value=%s", buf);
+        //printf("value=%s", buf);
 
         bool x;
         int y;
+         // output data into TLV file
         switch(json.type) {
         case JSON_STRING:
             tlv_write_file(STRING_TLV, json.data.string_size, json.data.string, tlv_to_write);
@@ -196,8 +196,7 @@ int main(int argc, char* argv[])
         }
         free(buf);
 
-        // output data into TLV file
-        //   write_data(argv[1], json->data);
+
     }
 
     if(result == JSON_ERROR) {
@@ -213,7 +212,7 @@ int main(int argc, char* argv[])
 
     printf("write keys values at the end:\n");
     while(ht_next(&it)) {
-        printf("\n %s , %d", it.key, (int)*((int*)it.value));
+        //printf("\n %s , %d", it.key, (int)*((int*)it.value));
 
         tlv_write_file(STRING_TLV, strlen(it.key), (void*)it.key, tlv_to_write);
         tlv_write_file(NUMBER_TLV, 1, (int*)it.value, tlv_to_write);
