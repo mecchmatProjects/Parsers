@@ -20,6 +20,6 @@ kvp2tlv:
 	gcc tlv_work.c key_list.c kvphash_table.c kvp_parser.c kvp2tlv.c -o kvp2tlv
 
 clean:
-	rm -rf *.o test_json test_stream test_hash test_tlv
+	rm -rf *.o test_json test_stream test_hash test_tlv kvp2tlv
 
 
